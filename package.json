@@ -1,0 +1,26 @@
+{
+  "name": "inSpectre",
+  "version": "1.0.0",
+  "description": "inSpectre is een oefening op het maken vn een layout mbv een css framework",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "npm-run-all --parallel sass-dev server-dev",
+    "sass-dev": "sass ./src/css/style.scss ./dist/css/style.css --watch",
+    "server-dev": "live-server",
+    "build": "npm-run-all --serial clean sass-prod",
+    "clean": "rm -r ./dist/ ",
+    "sass-prod": "sass ./src/css/style.scss ./dist/css/style.css --no-source-map --style=compressed",
+    "deploy": "surge . --domain https://inspectre.surge.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephendeceuster/framework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephendeceuster/framework/issues"
+  },
+  "homepage": "https://github.com/stephendeceuster/framework#readme"
+}
